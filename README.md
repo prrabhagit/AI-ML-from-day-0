@@ -8,7 +8,7 @@
 
 ---
 
-## 1> What AI / ML Actually Is (Conceptual)
+## 1>>> What AI / ML Actually Is (Conceptual)
 
 You should clearly understand this sentence:
 
@@ -25,7 +25,7 @@ If you can explain this to a non-tech person → you’re ready.
 
 ---
 
-## 2> Python Basics (Only These)
+## 2>>>> Python Basics (Only These)
 
 You **DO NOT** learn full Python today.
 
@@ -49,7 +49,7 @@ print(name, day)
 
 ---
 
-## 3> How Code Thinks (VERY IMPORTANT)
+## 3>>>> How Code Thinks (VERY IMPORTANT)
 
 Learn **how a computer thinks**:
 
@@ -70,7 +70,7 @@ This mindset matters more than syntax.
 
 ---
 
-## 4️> Basic Command Line Awareness (Light)
+## 4️>>>> Basic Command Line Awareness (Light)
 
 Just know:
 
