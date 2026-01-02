@@ -318,26 +318,7 @@ for n in numbers:
 
 ---
 
-## GitHub Task (Day 1)
 
-Create structure:
-
-```
-AI-from-0/
-│
-├── day_1/
-|
-│   variables.py
-│   input_output.py
-│   conditions.py
-│   lists_loops.py
-│
-└── README.md
-```
-
-Push **even simple code**. Consistency > perfection.
-
----
 
 ##  Mindset Check
 
