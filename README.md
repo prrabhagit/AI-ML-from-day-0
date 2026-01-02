@@ -140,3 +140,217 @@ If yes → **Day 0 completed **
 
 ---
 
+
+
+
+
+
+
+
+
+
+#  Day 1 of AI / ML (Python + Thinking)
+
+###  Goal of Day 1
+
+By the end of today, you should:
+
+* Think **logically like a machine**
+* Be comfortable with **core Python**
+* Be ready to handle **data (very small data)**
+
+No AI models yet. This is **foundation day**.
+
+---
+
+## Time Plan (2–3 hours total)
+
+### 1️>> Data Types (40 min)
+
+You already met them. Now understand them.
+
+| Type    | Example | Use in AI      |
+| ------- | ------- | -------------- |
+| `int`   | `10`    | counts, epochs |
+| `float` | `0.01`  | learning rate  |
+| `str`   | `"cat"` | labels, text   |
+| `bool`  | `True`  | conditions     |
+
+```python
+x = 10
+y = 2.5
+name = "AI"
+is_ai_fun = True
+
+print(type(x), type(y), type(name), type(is_ai_fun))
+```
+
+---
+
+### 2️>> Input & Output (20 min)
+
+Make programs interactive.
+
+```python
+name = input("Enter your name: ")
+print("Welcome to AI,", name)
+```
+
+Understand:
+
+* `input()` always gives **string**
+* Convert when needed
+
+```python
+age = int(input("Enter age: "))
+```
+
+---
+
+### 3>> Operators (30 min)
+
+These are **thinking tools**.
+
+#### Arithmetic
+
+```python
++  -  *  /  //  %  **
+```
+
+#### Comparison (VERY IMPORTANT)
+
+```python
+>  <  >=  <=  ==  !=
+```
+
+Example:
+
+```python
+x = 10
+print(x > 5)   # True
+```
+
+---
+
+### 4>> Conditions (If–Else) (40 min)
+
+This is where **decision-making** starts.
+
+```python
+marks = 75
+
+if marks >= 40:
+    print("Pass")
+else:
+    print("Fail")
+```
+
+AI = lots of **conditions + data**.
+
+---
+
+### >> Lists (Core of ML Data) (40 min)
+
+Lists store **multiple values**.
+
+```python
+marks = [60, 70, 80, 90]
+print(marks[0])
+```
+
+Why lists matter:
+
+* Datasets = lists
+* Features = lists
+* Outputs = lists
+
+```python
+numbers = [1, 2, 3]
+numbers.append(4)
+print(numbers)
+```
+
+---
+
+### >> Loops (Machine Repetition) (30 min)
+
+Machines are good at repetition.
+
+```python
+for i in range(5):
+    print(i)
+```
+
+Loop through data:
+
+```python
+marks = [60, 70, 80]
+
+for m in marks:
+    print(m)
+```
+
+AI training = loops + updates.
+
+---
+
+##  Mini Practice (MANDATORY)
+
+Do these without copy-paste:
+
+> Take 5 numbers from user, store in list
+> Print all numbers
+> Print numbers greater than 50
+
+Example logic:
+
+```python
+numbers = []
+
+for i in range(5):
+    num = int(input("Enter number: "))
+    numbers.append(num)
+
+for n in numbers:
+    if n > 50:
+        print(n)
+```
+
+---
+
+## GitHub Task (Day 1)
+
+Create structure:
+
+```
+AI-from-0/
+│
+├── day_1/
+|
+│   variables.py
+│   input_output.py
+│   conditions.py
+│   lists_loops.py
+│
+└── README.md
+```
+
+Push **even simple code**. Consistency > perfection.
+
+---
+
+##  Mindset Check
+
+* Confusion = progress
+* Errors = learning
+* Repetition = mastery
+
+---
+
+##  Day 2 Preview
+
+* Functions
+* Tuples & dictionaries
+* Problem-solving like ML
+* Tiny “learning logic” program
+
