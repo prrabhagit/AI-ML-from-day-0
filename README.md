@@ -335,3 +335,209 @@ for n in numbers:
 * Problem-solving like ML
 * Tiny “learning logic” program
 
+
+
+
+
+#  Day 2 — Functions, Data Structures & Thinking Like ML
+
+###  Goal of Day 2
+
+By the end of Day 2, a beginner should:
+
+* Write **functions**
+* Use **tuples & dictionaries**
+* Start thinking in **inputs → processing → outputs**
+* Understand how ML code is structured
+
+Still **no models yet** — but now you’re coding *like* ML.
+
+---
+
+## 1️. Functions (Core of ML Code)
+
+### What is a Function?
+
+A function is a **reusable block of code** that performs a task.
+
+```python
+def greet():
+    print("Welcome to AI")
+```
+
+Call it:
+
+```python
+greet()
+```
+
+---
+
+### Function with Parameters
+
+```python
+def add(a, b):
+    return a + b
+
+result = add(5, 3)
+print(result)
+```
+
+Why functions matter in ML:
+
+* training step
+* prediction step
+* evaluation step
+
+All are functions.
+
+---
+
+## 2️. Return vs Print (IMPORTANT)
+
+```python
+def square(x):
+    return x * x
+```
+
+ `return` gives value back
+ `print` only displays
+
+ML functions **always return values**.
+
+---
+
+## 3️. Tuples (Fixed Data)
+
+Tuples are **immutable** (cannot be changed).
+
+```python
+point = (3, 5)
+x, y = point
+```
+
+Used for:
+
+* coordinates
+* dataset rows
+* fixed configs
+
+---
+
+## 4️. Dictionaries (KEY ML STRUCTURE)
+
+### What is a Dictionary?
+
+Stores data as **key : value pairs**.
+
+```python
+student = {
+    "name": "Prabha",
+    "age": 17,
+    "field": "AI"
+}
+```
+
+Access:
+
+```python
+print(student["name"])
+```
+
+Why dictionaries matter in ML:
+
+* model parameters
+* datasets
+* configs
+* metrics
+
+Example:
+
+```python
+metrics = {
+    "loss": 0.23,
+    "accuracy": 92.5
+}
+```
+
+---
+
+## 5️. Looping Through Dictionaries
+
+```python
+for key, value in metrics.items():
+    print(key, value)
+```
+
+This is **very common** in training logs.
+
+---
+
+## 6. Simple ML-Style Logic (IMPORTANT)
+
+### Example: Mean (Average)
+
+```python
+def mean(numbers):
+    total = 0
+    for n in numbers:
+        total += n
+    return total / len(numbers)
+
+data = [10, 20, 30, 40]
+print(mean(data))
+```
+
+This is **literally how ML starts**.
+
+---
+
+## 7️. Input → Process → Output (ML Thinking)
+
+```python
+def classify(score):
+    if score >= 50:
+        return "Pass"
+    return "Fail"
+```
+
+ML is just **complex versions of this**.
+
+---
+
+##  Practice (Mandatory)
+
+> Write a function to find max in a list
+> Store student info in dictionary
+> Loop through dictionary and print neatly
+
+Example:
+
+```python
+def find_max(nums):
+    m = nums[0]
+    for n in nums:
+        if n > m:
+            m = n
+    return m
+```
+
+---
+
+
+
+##  Day 2 Mindset
+
+* Functions = ML blocks
+* Dictionaries = ML memory
+* Loops = training
+* Logic = intelligence
+
+---
+
+##  Day 3 Preview
+
+* Lists (deep)
+* Nested loops
+* Data preprocessing mindset
+* First tiny “learning” system
