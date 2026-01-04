@@ -541,3 +541,104 @@ def find_max(nums):
 * Nested loops
 * Data preprocessing mindset
 * First tiny “learning” system
+
+
+
+
+# Day 3 — Lists, Loops & Simple Data Handling
+
+## Goal
+
+* Work comfortably with lists
+* Use loops to process data
+* Think step-by-step
+
+---
+
+## Lists (Deep Basics)
+
+```python
+numbers = [10, 20, 30, 40]
+```
+
+Access:
+
+```python
+numbers[0]
+numbers[-1]
+```
+
+Modify:
+
+```python
+numbers.append(50)
+numbers.remove(20)
+```
+
+---
+
+## Looping Through Lists
+
+```python
+for n in numbers:
+    print(n)
+```
+
+With index:
+
+```python
+for i in range(len(numbers)):
+    print(i, numbers[i])
+```
+
+---
+
+## Nested Lists
+
+```python
+matrix = [
+    [1, 2],
+    [3, 4]
+]
+```
+
+Loop:
+
+```python
+for row in matrix:
+    for value in row:
+        print(value)
+```
+
+---
+
+## Simple Data Processing
+
+Sum:
+
+```python
+total = 0
+for n in numbers:
+    total += n
+```
+
+Filter:
+
+```python
+for n in numbers:
+    if n > 25:
+        print(n)
+```
+
+---
+
+## Practice
+
+1. Take 5 numbers from user
+2. Store in list
+3. Print max and average
+
+---
+
+
+
