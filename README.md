@@ -642,3 +642,109 @@ for n in numbers:
 
 
 
+
+# Day 4 — Strings, Files & Basic Data Cleaning
+
+## Goal
+
+* Work with text (strings)
+* Read/write files
+* Clean simple data
+
+---
+
+## Strings
+
+```python
+text = "AI from zero"
+```
+
+Basic operations:
+
+```python
+text.lower()
+text.upper()
+text.strip()
+text.replace("zero", "0")
+```
+
+Split & join:
+
+```python
+words = text.split()
+joined = " ".join(words)
+```
+
+---
+
+## Looping Through Strings
+
+```python
+for ch in text:
+    print(ch)
+```
+
+---
+
+## Files (Read)
+
+```python
+file = open("data.txt", "r")
+content = file.read()
+file.close()
+```
+
+Line by line:
+
+```python
+for line in open("data.txt"):
+    print(line.strip())
+```
+
+---
+
+## Files (Write)
+
+```python
+file = open("output.txt", "w")
+file.write("Hello World")
+file.close()
+```
+
+---
+
+## Basic Data Cleaning
+
+Remove spaces:
+
+```python
+name = "  Prabha  "
+clean = name.strip()
+```
+
+Lowercase + split:
+
+```python
+sentence = "Python Is Fun"
+words = sentence.lower().split()
+```
+
+Remove empty values:
+
+```python
+data = ["10", "", "20", " ", "30"]
+cleaned = [x for x in data if x.strip() != ""]
+```
+
+---
+
+## Practice
+
+1. Read a file
+2. Convert text to lowercase
+3. Remove empty lines
+4. Save cleaned text to new file
+
+---
+
+
