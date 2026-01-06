@@ -748,3 +748,90 @@ cleaned = [x for x in data if x.strip() != ""]
 ---
 
 
+
+# Day 5 — Data Handling & Simple Learning Logic
+
+## Goal
+
+* Work with numerical data
+* Process data step by step
+* Understand what “learning” means
+
+---
+
+## Working with Data
+
+```python
+data = [10, 20, 30, 40, 50]
+```
+
+Basic operations:
+
+```python
+min(data)
+max(data)
+sum(data)
+len(data)
+```
+
+---
+
+## Simple Feature Processing
+
+```python
+scaled = []
+for x in data:
+    scaled.append(x / max(data))
+```
+
+---
+
+## Simple Rule-Based Prediction
+
+```python
+def predict(x):
+    if x > 0.5:
+        return 1
+    return 0
+```
+
+---
+
+## Measuring Performance
+
+```python
+y_true = [1, 0, 1, 1]
+y_pred = [1, 0, 0, 1]
+
+correct = 0
+for i in range(len(y_true)):
+    if y_true[i] == y_pred[i]:
+        correct += 1
+
+accuracy = correct / len(y_true)
+print(accuracy)
+```
+
+---
+
+## Core Idea
+
+Learning =
+data → rules → evaluation → improvement
+
+---
+
+## Practice
+
+1. Normalize a list of numbers
+2. Write a simple prediction rule
+3. Calculate accuracy manually
+
+---
+
+
+## Next
+
+* **Day 6**: Introduction to NumPy & arrays
+
+
