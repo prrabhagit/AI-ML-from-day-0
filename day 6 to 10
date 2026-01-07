@@ -1,0 +1,103 @@
+
+
+# Day 6 — NumPy Basics (Core of AI/ML)
+
+## Goal
+
+* Handle numerical data efficiently
+* Replace Python lists with NumPy arrays
+* Think in vectors (ML mindset)
+
+---
+
+## What is NumPy?
+
+NumPy = **fast math for AI & ML**
+
+```python
+import numpy as np
+```
+
+---
+
+## Creating Arrays
+
+```python
+a = np.array([1, 2, 3, 4])
+```
+
+2D array:
+
+```python
+b = np.array([[1, 2], [3, 4]])
+```
+
+---
+
+## Array Properties
+
+```python
+a.shape
+a.ndim
+a.dtype
+```
+
+---
+
+## Basic Operations (Vectorized)
+
+```python
+a + 2
+a * 3
+a / 2
+```
+
+No loops needed ❌
+This is why ML uses NumPy.
+
+---
+
+## Indexing & Slicing
+
+```python
+a[0]
+a[1:3]
+b[0, 1]
+```
+
+---
+
+## Useful Functions
+
+```python
+np.sum(a)
+np.mean(a)
+np.max(a)
+np.min(a)
+```
+
+---
+
+## Simple ML-Style Example
+
+```python
+data = np.array([10, 20, 30, 40])
+normalized = data / np.max(data)
+print(normalized)
+```
+
+---
+
+## Core Idea
+
+ML works on **arrays, not single values**.
+
+Python lists → NumPy arrays → ML models
+
+---
+
+
+* **Day 7**: Data visualization (Matplotlib)
+* Then: Linear Regression from scratch 👀
+
+Say **“Day 7”** when ready 🚀
