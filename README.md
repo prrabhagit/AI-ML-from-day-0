@@ -970,4 +970,4 @@ No loops. Fast. Clean.
 ---
 
 
-## to explore more about numpy, go to my numpy.py file
+## to explore more features of numpy, go to my numpy.py file
