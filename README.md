@@ -971,3 +971,84 @@ No loops. Fast. Clean.
 
 
 ## to explore more features of numpy, go to my numpy.py file
+
+
+
+
+### **Day 7 – Conditional Logic for AI/ML**
+
+
+## What You Learn (Day 7)
+
+### 1️. Conditional Statements (Core)
+
+```python
+if x > 0:
+    print("Positive")
+elif x == 0:
+    print("Zero")
+else:
+    print("Negative")
+```
+
+Used for:
+
+* decision making
+* data filtering
+* rule-based logic
+
+---
+
+### 2️. Conditions with NumPy Arrays
+
+```python
+import numpy as np
+
+arr = np.array([10, 20, 30, 40])
+arr[arr > 25]
+```
+
+This is **real ML-style filtering**.
+
+---
+
+### 3️. Boolean Masks
+
+```python
+mask = arr % 2 == 0
+arr[mask]
+```
+
+Used in:
+
+* cleaning data
+* removing outliers
+
+---
+
+### 4️. `np.where()` (Very Important)
+
+```python
+np.where(arr > 25, 1, 0)
+```
+
+Used in:
+
+* labeling data
+* feature engineering
+
+---
+
+---
+
+### Why Day 7 Matters
+
+* ML models learn from **conditions**
+* Labels = conditional logic
+* Data preprocessing starts here
+
+---
+
+### Next (Day 8)
+
+ **Functions + NumPy (ML pipelines)**
