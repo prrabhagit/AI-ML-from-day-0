@@ -1,201 +1,127 @@
-
-"""
-NumPy – Complete Feature Overview
-
-This file covers almost all core NumPy features required for AI/ML foundations.
-"""
-
 import numpy as np
 
-
-# 1. ARRAY CREATION
-
-
-a = np.array([1, 2, 3])
-b = np.array([[1, 2], [3, 4]])
-
-zeros = np.zeros((2, 3))
-ones = np.ones((3, 3))
-empty = np.empty((2, 2))
-
-range_arr = np.arange(0, 10, 2)
-linspace_arr = np.linspace(0, 1, 5)
-
-
-# 2. DATA TYPES
-
-
-arr_int = np.array([1, 2, 3], dtype=int)
-arr_float = np.array([1, 2, 3], dtype=float)
-arr_bool = np.array([True, False])
-
-arr_int.astype(float)
-
-
-# 3. ARRAY ATTRIBUTES
-
-
-arr = np.array([[1, 2, 3], [4, 5, 6]])
-
-arr.ndim
-arr.shape
-arr.size
-arr.dtype
-arr.itemsize
-
-
-# 4. INDEXING & SLICING
-
-
-arr = np.array([10, 20, 30, 40, 50])
-
-arr[0]
-arr[-1]
-arr[1:4]
-arr[:3]
-arr[::2]
-
-matrix = np.array([[1, 2], [3, 4]])
-matrix[0, 1]
-
-
-# 5. BOOLEAN INDEXING
-
-
-arr = np.array([5, 10, 15, 20])
-
-mask = arr > 10
-filtered = arr[mask]
-
-# 6. FANCY INDEXING
-
-
-arr = np.array([10, 20, 30, 40])
-arr[[0, 2]]
-
-# 7. RESHAPING
-
-
-arr = np.array([1, 2, 3, 4, 5, 6])
-
-arr.reshape(2, 3)
-arr.reshape(-1, 2)
-arr.flatten()
-arr.ravel()
-
-# 8. STACKING & SPLITTING
-
-a = np.array([1, 2])
-b = np.array([3, 4])
-
-np.vstack((a, b))
-np.hstack((a, b))
-np.split(np.array([1, 2, 3, 4]), 2)
-
-# 9. COPY VS VIEW
-
-a = np.array([1, 2, 3])
-b = a.view()
-c = a.copy()
-
-b[0] = 99      # affects a
-c[1] = 100     # does NOT affect a
-
-# 10. MATHEMATICAL OPERATIONS
-
-arr = np.array([1, 2, 3])
-
-arr + 5
-arr - 1
-arr * 2
-arr / 2
-arr ** 2
-
-# 11. UNIVERSAL FUNCTIONS (UFUNCS)
-
-np.sqrt(arr)
-np.exp(arr)
-np.log(arr)
-np.sin(arr)
-np.cos(arr)
-
-# 12. AGGREGATIONS
-
-arr = np.array([1, 2, 3, 4])
-
-arr.sum()
-arr.mean()
-arr.min()
-arr.max()
-arr.std()
-arr.var()
-
-
-# 13. AXIS OPERATIONS
-
-matrix = np.array([[1, 2, 3], [4, 5, 6]])
-
-matrix.sum(axis=0)   # column-wise
-matrix.sum(axis=1)   # row-wise
-
-# 14. BROADCASTING
-
-arr = np.array([1, 2, 3])
-arr + np.array([10])
-
-matrix + 5
-
-# 15. RANDOM MODULE
-
-np.random.rand(3)
-np.random.randn(3)
-np.random.randint(0, 10, size=5)
-
-np.random.seed(42)
-
-# 16. SORTING & SEARCHING
-
-arr = np.array([4, 1, 3, 2])
-
-np.sort(arr)
-np.argsort(arr)
-np.where(arr > 2)
-
-# 17. LINEAR ALGEBRA
-
-A = np.array([[1, 2], [3, 4]])
-B = np.array([[5, 6], [7, 8]])
-
-np.dot(A, B)
-A @ B
-np.linalg.det(A)
-np.linalg.inv(A)
-np.linalg.eig(A)
-
-# 18. STATISTICS
-
-arr = np.array([1, 2, 3, 4, 5])
-
-np.median(arr)
-np.percentile(arr, 50)
-np.corrcoef(arr, arr)
-
-# 19. FILE I/O
-
-np.save("array.npy", arr)
-loaded = np.load("array.npy")
-
-np.savetxt("array.txt", arr)
-np.loadtxt("array.txt")
-
-# 20. MASKED / NAN HANDLING
-
-arr = np.array([1, 2, np.nan, 4])
-
-np.isnan(arr)
-np.nanmean(arr)
-
-# ==============================
-# END OF NUMPY CORE FEATURES
-# ==============================
-#this file covers near to 100% of numpy features
+# ---------- ARRAY CREATION ----------
+a = np.array([1, 2, 3])              # 1D array
+b = np.array([[1, 2], [3, 4]])       # 2D array (matrix)
+c = np.zeros((2, 3))                 # Array filled with zeros
+d = np.ones((3, 2))                  # Array filled with ones
+e = np.full((2, 2), 7)               # Array filled with a constant value
+f = np.eye(3)                        # Identity matrix
+g = np.arange(0, 10, 2)              # Values from 0 to 8 with step 2
+h = np.linspace(0, 1, 5)             # 5 evenly spaced values between 0 and 1
+i = np.random.rand(3, 3)             # Random values (0 to 1)
+j = np.random.randn(2, 2)            # Random values (normal distribution)
+k = np.random.randint(1, 10, (3, 3)) # Random integers between 1 and 9
+
+# ---------- ARRAY PROPERTIES ----------
+a.shape      # Shape of array
+b.ndim       # Number of dimensions
+b.size       # Total number of elements
+b.dtype      # Data type of elements
+b.T          # Transpose of matrix
+
+# ---------- RESHAPING ----------
+b.reshape(4, 1)   # Reshape without changing data
+b.flatten()       # Copy and flatten to 1D
+b.ravel()         # View and flatten to 1D
+
+# ---------- ELEMENT-WISE OPERATIONS ----------
+a + 2             # Add scalar to each element
+a * 3             # Multiply each element
+a + np.array([4, 5, 6])  # Element-wise addition
+a ** 2            # Power
+np.sqrt(a)        # Square root
+np.exp(a)         # Exponential
+np.log(a)         # Natural log
+
+# ---------- AGGREGATION ----------
+np.sum(a)         # Sum of elements
+np.mean(a)        # Mean
+np.median(a)      # Median
+np.std(a)         # Standard deviation
+np.var(a)         # Variance
+np.min(a)         # Minimum
+np.max(a)         # Maximum
+np.argmin(a)      # Index of minimum
+np.argmax(a)      # Index of maximum
+
+# ---------- INDEXING & SLICING ----------
+b[0, 1]           # Element at row 0, column 1
+b[:, 0]           # All rows, first column
+b[1:]             # Rows from index 1 onward
+b[b > 2]          # Boolean filtering
+
+x = np.array([1, 2, 3, 4, 5])
+x[x % 2 == 0]     # Select even numbers
+
+# ---------- MATRIX OPERATIONS ----------
+m = np.array([[1, 2], [3, 4]])
+n = np.array([[5, 6], [7, 8]])
+m + n             # Matrix addition
+m - n             # Matrix subtraction
+m * n             # Element-wise multiplication
+m @ n             # Matrix multiplication
+np.dot(m, n)      # Dot product
+
+# ---------- STACKING & SPLITTING ----------
+np.concatenate([a, g])   # Join arrays
+np.vstack([m, n])        # Vertical stack
+np.hstack([m, n])        # Horizontal stack
+np.split(g, 5)           # Split into equal parts
+
+# ---------- LOGICAL ----------
+np.where(a > 1)    # Indices where condition is true
+np.any(a > 2)      # True if any condition is true
+np.all(a > 0)      # True if all conditions are true
+
+# ---------- SORTING ----------
+u = np.array([3, 1, 2])
+np.sort(u)         # Sorted array
+np.argsort(u)      # Indices of sorted order
+
+# ---------- UNIQUE ----------
+p = np.array([1, 2, 2, 3])
+np.unique(p, return_counts=True)  # Unique values and counts
+
+# ---------- CLIPPING ----------
+np.clip(a, 1, 2)   # Limit values between 1 and 2
+
+# ---------- AXIS OPERATIONS ----------
+q = np.array([[1, 2, 3], [4, 5, 6]])
+np.sum(q, axis=0)  # Column-wise sum
+np.sum(q, axis=1)  # Row-wise sum
+
+# ---------- BROADCASTING ----------
+r = np.array([1, 2, 3])
+s = np.array([[1], [2], [3]])
+r + s              # Broadcasting addition
+
+# ---------- LINEAR ALGEBRA ----------
+t = np.array([[1, 2], [3, 4]], dtype=float)
+np.linalg.det(t)   # Determinant
+np.linalg.inv(t)   # Inverse
+np.linalg.eig(t)   # Eigenvalues and eigenvectors
+
+# ---------- FILE I/O ----------
+np.save("array.npy", a)     # Save binary file
+np.load("array.npy")        # Load binary file
+np.savetxt("array.txt", a)  # Save text file
+np.loadtxt("array.txt")     # Load text file
+
+# ADVANCED 
+np.vectorize(lambda x: x * 2)(a)   # Vectorized function
+np.meshgrid(np.arange(3), np.arange(3))  # Coordinate matrices
+np.cumsum(a)        # Cumulative sum
+np.cumprod(a)       # Cumulative product
+np.diff(a)          # Difference between elements
+
+# ---------- NaN & INF ----------
+np.isnan(np.array([1, np.nan, 3]))     # Check NaN
+np.isfinite(np.array([1, np.inf, 3]))  # Check finite values
+
+# ---------- COPYING ----------
+np.copy(a)          # Deep copy
+a.view()            # Shallow copy
+
+# ---------- BROADCAST SHAPE ----------
+np.broadcast_to(a, (3, 3))  # Broadcast array to new shape
