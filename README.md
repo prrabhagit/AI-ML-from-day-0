@@ -1049,6 +1049,96 @@ Used in:
 
 ---
 
-### Next (Day 8)
 
- **Functions + NumPy (ML pipelines)**
+### **Day 8 – Functions for AI/ML (Clean & Practical)**
+
+Day 8 is about turning logic into **reusable, testable units** — exactly how ML pipelines work.
+
+---
+
+## What You Learn (Day 8)
+
+### 1️. Defining Functions
+
+```python
+def add(a, b):
+    return a + b
+```
+
+Used in:
+
+* data processing
+* feature engineering
+* model steps
+
+---
+
+### 2️. Parameters & Return Values
+
+```python
+def normalize(x):
+    return (x - min(x)) / (max(x) - min(x))
+```
+
+---
+
+### 3️. Default Arguments
+
+```python
+def train_model(epochs=10):
+    print(epochs)
+```
+
+---
+
+### 4️. Functions with NumPy Arrays
+
+```python
+import numpy as np
+
+def mean_value(arr):
+    return np.mean(arr)
+```
+
+Core ML pattern.
+
+---
+
+### 5️. Multiple Return Values
+
+```python
+def stats(arr):
+    return arr.mean(), arr.std()
+```
+
+---
+
+### 6️. Function Composition
+
+```python
+def square(x):
+    return x*x
+
+def cube(x):
+    return square(x) * x
+```
+
+---
+
+
+
+## Why Day 8 Matters for AI/ML
+
+* ML code = chained functions
+* Clean experiments
+* Reproducibility
+
+---
+
+## What NOT to Learn Yet 
+
+* decorators
+* closures
+* recursion (for now)
+
+---
