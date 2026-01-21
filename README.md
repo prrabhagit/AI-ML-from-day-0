@@ -1135,6 +1135,10 @@ def cube(x):
 
 ---
 
+
+
+
+
 ## What NOT to Learn Yet 
 
 * decorators
@@ -1142,3 +1146,85 @@ def cube(x):
 * recursion (for now)
 
 ---
+
+
+### DAY 9 of AI/ML
+###  Topic: **Overfitting & Underfitting + Model Evaluation**
+
+#### 1️>>> Underfitting
+
+* Model is **too simple**
+* Can’t capture patterns in data
+* **High bias**
+* Poor performance on **both training & test data**
+
+**Example:**
+Using a straight line to fit curved data.
+
+---
+
+#### 2️>>> Overfitting
+
+* Model is **too complex**
+* Learns noise instead of pattern
+* **High variance**
+* Very good on training data but bad on test data
+
+**Example:**
+A model that memorizes every training point.
+
+---
+
+#### 3️>>> Perfect Fit (What we want)
+
+* Balanced complexity
+* Learns patterns, not noise
+* Good performance on **unseen data**
+
+---
+
+###  How to Detect Them
+
+| Situation    | Training Error | Test Error |
+| ------------ | -------------- | ---------- |
+| Underfitting | High           | High       |
+| Overfitting  | Low            | High       |
+| Good Model   | Low            | Low        |
+
+---
+
+###  Ways to Fix
+
+**Fix Underfitting**
+
+* Use more complex model
+* Add more features
+* Train longer
+
+**Fix Overfitting**
+
+* Get more data
+* Feature selection
+* Regularization (L1/L2)
+* Dropout (in neural networks)
+
+---
+
+###  Model Evaluation Metrics
+
+* **Accuracy** – overall correctness
+* **Precision** – how many predicted positives were correct
+* **Recall** – how many actual positives were found
+* **F1-score** – balance of precision & recall
+
+---
+
+###  Mini Task (Do this today)
+
+1. Write definitions of:
+
+   * Overfitting
+   * Underfitting
+2. Answer:
+   *If training accuracy = 98% and test accuracy = 65%, what is happening and why?*
+
