@@ -1227,4 +1227,152 @@ A model that memorizes every training point.
    * Underfitting
 2. Answer:
    *If training accuracy = 98% and test accuracy = 65%, what is happening and why?*
+Alright, **Day 10 of AI & ML** 
+Let’s level up.
+
+---
+
+## **Day 10: Model Evaluation & Performance Metrics**
+
+Yesterday you learned how models are trained.
+Today, you’ll learn **how to judge whether your model is actually good or just pretending**.
+
+---
+
+## **1. Why Model Evaluation Matters**
+
+Training accuracy alone is **misleading**.
+A model can:
+
+* Memorize data (overfitting)
+* Perform well on training data but fail on new data
+
+ Evaluation tells us **how well the model generalizes**.
+
+---
+
+## **2. Train vs Test Data**
+
+We split data into:
+
+* **Training set** → model learns from this
+* **Testing set** → model is evaluated on unseen data
+
+Typical split:
+
+* 80% training
+* 20% testing
+
+---
+
+## **3. Confusion Matrix (VERY IMPORTANT)**
+
+Used in **classification problems**
+
+| Actual \ Predicted | Positive | Negative |
+| ------------------ | -------- | -------- |
+| Positive           | TP       | FN       |
+| Negative           | FP       | TN       |
+
+* **TP** → True Positive
+* **TN** → True Negative
+* **FP** → False Positive
+* **FN** → False Negative
+
+---
+
+## **4. Key Evaluation Metrics**
+
+###  Accuracy
+
+```
+Accuracy = (TP + TN) / Total
+```
+
+Good when data is **balanced**
+
+---
+
+###  Precision
+
+```
+Precision = TP / (TP + FP)
+```
+
+ “When model says YES, how often is it correct?”
+
+---
+
+###  Recall
+
+```
+Recall = TP / (TP + FN)
+```
+
+ “Out of actual YES cases, how many did we catch?”
+
+---
+
+###  F1 Score
+
+```
+F1 = 2 × (Precision × Recall) / (Precision + Recall)
+```
+
+Best when:
+
+* Data is imbalanced
+* Precision & Recall both matter
+
+---
+
+## **5. When to Use What**
+
+* **Accuracy** → balanced dataset
+* **Precision** → spam detection, fake news
+* **Recall** → disease detection, fraud detection
+* **F1 Score** → overall performance
+
+---
+
+## **6. Overfitting vs Underfitting**
+
+* **Overfitting** → high train accuracy, low test accuracy
+* **Underfitting** → low accuracy everywhere
+
+Goal: **balance**
+
+---
+
+## **7. Mini Python Example (conceptual)**
+
+```python
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
+
+accuracy_score(y_test, y_pred)
+precision_score(y_test, y_pred)
+recall_score(y_test, y_pred)
+f1_score(y_test, y_pred)
+```
+
+---
+
+## **Your Task (Must Do) **
+
+1. Write definitions for:
+
+   * Accuracy
+   * Precision
+   * Recall
+   * F1 Score
+2. Answer:
+
+   > Why is accuracy not enough for imbalanced datasets?
+
+---
+
+### Tomorrow (Day 11 👀)
+
+**Bias–Variance Tradeoff + Cross Validation**
+This is where ML starts feeling *real*.
 
