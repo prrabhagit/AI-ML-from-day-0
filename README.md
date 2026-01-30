@@ -1376,3 +1376,136 @@ f1_score(y_test, y_pred)
 **Bias–Variance Tradeoff + Cross Validation**
 This is where ML starts feeling *real*.
 
+
+# Day 11 — Bias–Variance Tradeoff + Cross Validation
+
+## Bias–Variance Tradeoff (Practical View)
+
+In ML, model error comes from two opposite problems:
+
+### High Bias → Underfitting
+
+Model is too simple → misses real patterns.
+
+**Signs**
+
+* Bad training performance
+* Bad validation performance
+* Model too rigid
+
+**Example**
+
+```text
+Linear model trying to fit curved data
+```
+
+---
+
+### High Variance → Overfitting
+
+Model is too complex → learns noise.
+
+**Signs**
+
+* Very good training score
+* Poor validation score
+* Model too sensitive to data
+
+**Example**
+
+```text
+Deep tree memorizing training set
+```
+
+---
+
+### Tradeoff Goal
+
+Find model complexity where validation error is lowest.
+
+```
+Too simple → High bias
+Too complex → High variance
+Balanced → Best generalization
+```
+
+---
+
+## Error vs Complexity Curve (Concept)
+
+```
+Complexity increases
+Bias decreases
+Variance increases
+Total Error forms a U-shaped curve
+```
+
+We aim for the bottom of the U.
+
+---
+
+# Cross Validation (How we measure it properly)
+
+Instead of one train/test split, we test model multiple times on different splits.
+
+Why?
+Because single split results can be misleading.
+
+---
+
+## k-Fold Cross Validation
+
+### Steps
+
+```
+Split data into k parts
+Repeat k times:
+    Train on k-1 folds
+    Validate on remaining fold
+Average the scores
+```
+
+---
+
+## Example (Python)
+
+```python
+from sklearn.model_selection import cross_val_score
+from sklearn.linear_model import LinearRegression
+
+model = LinearRegression()
+scores = cross_val_score(model, X, y, cv=5)
+
+print(scores)
+print("Mean accuracy:", scores.mean())
+```
+
+---
+
+## Why This Matters
+
+Cross validation helps:
+
+```
+detect overfitting
+compare models fairly
+choose hyperparameters
+estimate real performance
+```
+
+---
+
+## How It Connects to Bias–Variance
+
+```
+High variance model → CV scores unstable
+High bias model → CV scores consistently low
+Good model → CV scores stable and high
+```
+
+---
+
+## Day 11 Takeaway
+
+Good ML is not about best training accuracy —
+it’s about best validation performance.
